@@ -1,0 +1,158 @@
+/* Son los mensajes de error*/
+
+.error {
+    color: red;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+
+body{
+    background-color: #182335;
+   
+    background-image: linear-gradient(
+        to bottom right,
+        #182335, #033c68, #0979b0, #03536d, #20395e, #4181e2 );
+background-size: 200% 200%;
+    
+animation: movimiento 5s linear infinite alternate;
+}
+@keyframes movimiento {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+
+.contenidotab{
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(7,170px);
+    grid-auto-rows: 50px;
+    box-shadow: 0 0 20px rgb(0, 0, 0) ;
+}
+.titulos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: monospace;
+    background-color: rgb(40, 65, 120,1);
+}
+.datos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-family: monospace;
+    background-color: #cfcfcf;
+    
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+
+
+/* boton de la pagina principal */
+
+.BotonInicio {
+    width: auto;
+    height: 50px;
+}
+
+
+/* Boton de agregar pcs en la tabla de pcs */
+
+.botonAnexar {
+    position: absolute;
+    left: 1000px;
+}
+
+
+/* Pertenece a la pagina principal*/
+
+.ConteinerInicio {
+    text-align: center;
+}
+
+.Filtros {
+    text-align: center;
+}
+
+
+/* Paginar */
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 110;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+
+/*       CONTENIDO DESPLEGABLE         */
+
+header {
+    font-family: Helvetica;
+    width: 480px;
+    position: absolute;
+}
+
+ul {
+    list-style: none;
+}
+
+#menu li>a {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+}
+
+#menu li>a:hover {
+    color: #000;
+    background-color: #eaeaea;
+}
+
+#menu>li {
+    float: left;
+    text-align: center
+}
+
+#menu>li>ul {
+    display: none;
+}
+
+#menu>li:hover>ul {
+    display: block;
+}
