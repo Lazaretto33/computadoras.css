@@ -17,16 +17,19 @@ body{
     background-image: linear-gradient(
         to bottom right,
         #182335, #033c68, #0979b0, #03536d, #20395e, #4181e2 );
-background-size: 200% 200%;
+background-size: 300% 300%;
+height:auto;
     
 animation: movimiento 5s linear infinite alternate;
+/*background-size: cover;*/
+/*background-attachment: fixed;*/
 }
 @keyframes movimiento {
     from {
         background-position: 0 0;
     }
     to {
-        background-position: 100% 100%;
+        background-position: 100% 75%;
     }
 }
 
@@ -35,10 +38,11 @@ animation: movimiento 5s linear infinite alternate;
     width: 90%;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: repeat(7,170px);
+    grid-template-columns: repeat(7,14.3%);
     grid-auto-rows: 50px;
     box-shadow: 0 0 20px rgb(0, 0, 0) ;
 }
+
 .titulos{
     display: flex;
     justify-content: center;
@@ -46,6 +50,7 @@ animation: movimiento 5s linear infinite alternate;
     font-size: 1.5em;
     font-family: monospace;
     background-color: rgb(40, 65, 120,1);
+
 }
 .datos{
     display: flex;
@@ -71,11 +76,13 @@ img{
 
 
 /* Boton de agregar pcs en la tabla de pcs */
-
-.botonAnexar {
-    position: absolute;
-    left: 1000px;
+.derecha {
+    text-align: right;
 }
+/*.botonAnexar {
+    /*position: absolute;
+    left: 1000px;*/
+
 
 
 /* Pertenece a la pagina principal*/
@@ -90,11 +97,15 @@ img{
 
 
 /* Paginar */
+.centrar {
+    text-align: center;
+}
 
 ul.pagination {
     display: inline-block;
     padding: 0;
     margin: 110;
+
 }
 
 ul.pagination li {

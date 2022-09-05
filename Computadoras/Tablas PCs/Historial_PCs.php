@@ -11,7 +11,7 @@ if (((empty($_SESSION["Email"])))) {
 
     <head>
         <title>Base de datos Alumnos</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="./style.css">
     </head>
 
     <body>

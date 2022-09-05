@@ -47,7 +47,7 @@ include("../Union-Server.php");// Conexion a la base de datos
             $Resultado = mysqli_query($conex, $SQL); //se hace la conexion con toda la base de datos
             while ($mostrar = mysqli_fetch_array($Resultado)) { //imprime por pantalla toda la base de datos 
             ?>
-                <tr>
+              
                     <div class="datos"><?php echo $mostrar['IDLogin'] ?></div>
                     <div class="datos"><?php echo $mostrar['Nombre'] ?></div>
                     <div class="datos"><?php echo $mostrar['Email'] ?></div>
@@ -55,14 +55,15 @@ include("../Union-Server.php");// Conexion a la base de datos
                     <div class="datos"><img src="<?php echo str_replace("./", "../", $mostrar['Imagen']) ?>" alt="imagen"></div>
                     <div class="datos"><?php if ($mostrar['Administrador']==0){echo "Usuario";}else{echo "Administrador";}  ?></div>
                     <!-- Obtiene el Id a actualizar -->
-                    <td> <div class="datos" > <a href="../Tablas PCs/update/actualizar.php?IDLogin=<?php echo $mostrar["IDLogin"]; ?>">Editar</a> </div>
-                </tr>
+                     <div class="datos" > <a href="../Tablas PCs/update/actualizar.php?IDLogin=<?php echo $mostrar["IDLogin"]; ?>">Editar</a> </div>
+              
+
         <?php
             }
         }
         mysqli_free_result($Resultado);
         ?>
-        
+        </div>
 </body>
 
 </html>

@@ -11,6 +11,7 @@ if (((empty($_SESSION["Email"])))) { //Si no se logeo lo expulsa
     <head>
         <title>Base de datos Alumnos</title>
         <link rel="stylesheet" href="../../style.css">
+        <!--<link rel="stylesheet" href="../Estilos.css/anexarS.css">-->
     </head>
 
     <body>

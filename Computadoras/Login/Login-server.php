@@ -1,33 +1,32 @@
+<html>
+
+<head>
+    <title>Iniciar Sesion</title>
+    <html lang="es">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Estilos.css/loginRegistro.css">
+
+</head>
+</html>
 <?php
+
 //incluye la union al servidor de mysql
 include("../Union-Server.php");
-//recuperar contraseña
-if (isset($_POST['Recuperar_Contraseña'])) {
-    $Email = trim($_POST['email']);
-    $SQL = "SELECT * FROM `login-alumnos` WHERE Email = '" . $Email . "'";
-    $Resultado = mysqli_query($conex, $SQL);
-    $mostrar = mysqli_fetch_array($Resultado);
-    if ($Email == $mostrar['Email']){
-        
-    }
-}
 //toma los datos del formulario de inicio de sesion y lo almaceno en variables
+
+	
+
 if (isset($_POST['submitIn'])) {
     $email = trim($_POST['email']);
     $contraseña = trim($_POST['contraseña']);
     $_SESSION['email'] = "$email";
 }
 //toma los datos del formulario para subirlo a la base de datos y tirar los mensajes de error
+ 
 if (isset($_POST['submitIn'])) {
-    if (empty($email)) { //empty==si esta vacio
-       
-    }
-    if (empty($contraseña)) {
-        
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //error si el mail es incorrecto si esta mal escrito
-        
-    } else {
+  {
         //verifica que los campos del formulario no esten vacios
         if (strlen($_POST['email']) > 1 && strlen($_POST['contraseña']) > 1) {
             //Se comparan los datos de sesion con los de la base de datos
@@ -50,7 +49,7 @@ if (isset($_POST['submitIn'])) {
                     echo "<h2>Ocurrio un error</h2>";
                 }
             } else {
-                echo "<p class='error'>*Datos Incorrectos</p>"; //susede raramente este mensaje
+                echo "<div class='message_error1'>Datos Incorrectos</div>"; 
                 //no hay usuario
             }
         }
