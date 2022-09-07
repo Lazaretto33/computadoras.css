@@ -137,60 +137,66 @@ if (((empty($_SESSION["Email"])))) {
                 
                     <div class="contenidotabPC">
                         <!-- fila de la tabla-->
-                        <div class="titulos">ID</div> <!-- columna id-->
-                        <div class="titulos">Procesador</div>
-                        <div class="titulos">RAM</div>
-                        <div class="titulos">MotherBoard</div>
-                        <div class="titulos">Zocalos</div>
-                        <div class="titulos">HDD</div>
-                        <div class="titulos">Marca</div>
-                        <div class="titulos">Laboratorio</div>
-                        <div class="titulos">DIMMs</div>
-                        <div class="titulos">Zocalos Libres</div>
-                        <div class="titulos">PS/2</div>
-                        <div class="adm">Administrador</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+
+                        <th>ID</th> <!-- columna id-->
+                        <th>Procesador</th>
+                        <th>RAM</th>
+                        <th>MotherBoard</th>
+                        <th>Zocalos</th>
+                        <th>HDD</th>
+                        <th>Marca</th>
+                        <th>Laboratorio</th>
+                        <th>DIMMs</th>
+                        <th>Zocalos Libres</th>
+                        <th>PS/2</th>
+                        <th>Administrador</th>
                         <?php if ($_SESSION["UserAdmin"]) { //Si el usuario es admin puede editar
                         ?>
-                            <div class="historial-editar">Editar/
-                                Historial</div><!-- columna editar-->
+                            <th>Editar/Historial</th><!-- columna editar-->
                     </tr>
+                        </thead>
                 <?php
                         } //imprime por pantalla las pcs 
                         while ($mostrar = $resPCs->fetch_array(MYSQLI_BOTH)) {
                 ?>
-                    
+                    <tbody>
+                        <tr>
                         <!-- ID oculto para ocupar en eliminar y editar(con el id se sabe cual se selecciono para hacer los cambios) -->
                         <input type="hidden" value="<?php echo $mostrar['ID'] ?>" name="ID">
-                        <div class="datos"><?php echo $mostrar['ID'] ?></div><!-- muestra el id de la base de datos en la tabla-->
-                        <div class="datos"><?php echo $mostrar['Procesador'] ?></div>
-                        <div class="datos"><?php echo $mostrar['RAM'] ?></div>
-                        <div class="datos"><?php echo $mostrar['MotherBoard'] ?></div>
-                        <div class="datos"><?php echo $mostrar['Zocalos'] ?></div>
-                        <div class="datos"><?php echo $mostrar['HDD'] ?></div>
-                        <div class="datos"><?php echo $mostrar['Marca'] ?></div>
-                        <div class="datos"></a><?php echo $mostrar['Laboratorio'] ?></div>
-                        <div class="datos"><?php echo $mostrar['DIMMs'] ?></div>
-                        <div class="datos"><?php echo $mostrar['Zocalos_Libres'] ?></div>
-                        <div class="datos"><?php echo $mostrar['PS/2'] ?></div>
-                        <div class="datos"><?php echo $mostrar['Administrador'] ?></div>
+                        <td data-label="ID"><?php echo $mostrar['ID'] ?></td><!-- muestra el id de la base de datos en la tabla-->
+                        <td data-label="Procesador"><?php echo $mostrar['Procesador'] ?></td>
+                        <td data-label="RAM"><?php echo $mostrar['RAM'] ?></td>
+                        <td data-label="MotherBoard"><?php echo $mostrar['MotherBoard'] ?></td>
+                        <td data-label="Zocalos"><?php echo $mostrar['Zocalos'] ?></td>
+                        <td data-label="HDD"><?php echo $mostrar['HDD'] ?></td>
+                        <td data-label="Marca"><?php echo $mostrar['Marca'] ?></td>
+                        <td data-label="Laboratorio"></a><?php echo $mostrar['Laboratorio'] ?></td>
+                        <td data-label="DIMMs"><?php echo $mostrar['DIMMs'] ?></td>
+                        <td data-label="Zocalos_Libres"><?php echo $mostrar['Zocalos_Libres'] ?></td>
+                        <td data-label="PS/2"><?php echo $mostrar['PS/2'] ?></td>
+                        <td data-label="Administrador"><?php echo $mostrar['Administrador'] ?></td>
                         <?php if ($_SESSION["UserAdmin"]) { // si es administrador puede editar y ver el historial
                         ?>
-                            <div class="editar"><a href="../Tablas PCs/update/actualizar.php?ID=<?php echo $mostrar["ID"]; ?>">Editar/</a>      
-                               <a href="../Tablas PCs/Historial_PCs.php?ID=<?php echo $mostrar["ID"]; ?>">Historial</a></div>
-                            </td>
-                    
+                            <td><a href="../Tablas PCs/update/actualizar.php?ID=<?php echo $mostrar["ID"]; ?>">Editar/</a>      
+                               <a href="../Tablas PCs/Historial_PCs.php?ID=<?php echo $mostrar["ID"]; ?>">Historial</a></td>
+                            </tr>
+                        </tbody>
+                        </div>
         <?php
                             }
                         }
                     }
         ?>
-                </div>
+               
                 <?php //Mensaje de error
                 if (!empty($mensaje)) {
                     echo $mensaje;
                 }
                 ?>
-                <br>
+                
                 <?php if ($_SESSION["UserAdmin"]) { //Si es admin puede agregar
                 ?>
                 <div class="derecha">

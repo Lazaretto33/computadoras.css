@@ -6,7 +6,7 @@ include("../Union-Server.php");// Conexion a la base de datos
 
 <head>
     <title>Formulario</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,31 +32,38 @@ include("../Union-Server.php");// Conexion a la base de datos
             </nav>
         </header>
         <br></br>
-        <div class="contenidotab">
+        <div class="contenidotabPC">
+            <div class="table">
+                <thead>
+                    <tr>
                 <!-- fila de la tabla-->
-                <div class="titulos">ID_Login</div> <!-- columna id-->
-                <div class="titulos">Nombre</div><!-- columna nombre-->
-                <div class="titulos">Email</div><!-- columna email-->
-                <div class="titulos">Contraseña</div>
-                <div class="titulos">Imagen</div>
-                <div class="titulos">Administrador</div>
-                <div class="titulos">Editar</div><!-- columna editar-->
-            
+                <th>ID_Login</th> <!-- columna id-->
+                <th>Nombre</th><!-- columna nombre-->
+                <th>Email</th><!-- columna email-->
+                <th>Contraseña</th>
+                <th>Imagen</th>
+                <th>Administrador</th>
+                <th>Editar</th><!-- columna editar-->
+    </tr>
+    </thead>
             <?php
             $SQL = "SELECT * FROM `login-alumnos` WHERE 1"; //selecciono toda la base de datos para mostrarla
             $Resultado = mysqli_query($conex, $SQL); //se hace la conexion con toda la base de datos
             while ($mostrar = mysqli_fetch_array($Resultado)) { //imprime por pantalla toda la base de datos 
             ?>
+            <tbody>
+                <tr>
               
-                    <div class="datos"><?php echo $mostrar['IDLogin'] ?></div>
-                    <div class="datos"><?php echo $mostrar['Nombre'] ?></div>
-                    <div class="datos"><?php echo $mostrar['Email'] ?></div>
-                    <div class="datos"><?php echo $mostrar['Contraseña'] ?></div>
-                    <div class="datos"><img src="<?php echo str_replace("./", "../", $mostrar['Imagen']) ?>" alt="imagen"></div>
-                    <div class="datos"><?php if ($mostrar['Administrador']==0){echo "Usuario";}else{echo "Administrador";}  ?></div>
+                    <td><?php echo $mostrar['IDLogin'] ?></td>
+                    <td><?php echo $mostrar['Nombre'] ?></td>
+                    <td><?php echo $mostrar['Email'] ?></td>
+                    <td><?php echo $mostrar['Contraseña'] ?></td>
+                    <td><img src="<?php echo str_replace("./", "../", $mostrar['Imagen']) ?>" alt="imagen"></td>
+                    <td><?php if ($mostrar['Administrador']==0){echo "Usuario";}else{echo "Administrador";}  ?></td>
                     <!-- Obtiene el Id a actualizar -->
-                     <div class="datos" > <a href="../Tablas PCs/update/actualizar.php?IDLogin=<?php echo $mostrar["IDLogin"]; ?>">Editar</a> </div>
-              
+                     <td> <a href="../Tablas PCs/update/actualizar.php?IDLogin=<?php echo $mostrar["IDLogin"]; ?>">Editar</a> </td>
+            </tr>
+            </tbody>
 
         <?php
             }

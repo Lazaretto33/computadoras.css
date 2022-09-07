@@ -1,0 +1,312 @@
+/* Son los mensajes de error*/
+
+.error {
+    color: red;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+
+}
+
+body{
+    background-color: #182335;
+    
+     background-image: linear-gradient(
+         to bottom right,
+         #182335, #033c68, #0979b0, #03536d, #20395e, #4181e2 );
+ background-size: 300% 300%;
+ height:auto;
+     
+ animation: movimiento 5s linear infinite alternate;
+ }
+ @keyframes movimiento {
+     from {
+         background-position: 0 0;
+     }
+     to {
+         background-position: 100% 20%;
+     }
+ }
+.contenidotabPC{
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        
+        
+        
+            
+        }
+        .table{
+            width: 100%;
+            border: 1px solid #4181e2;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+        }
+        .table tr{
+                background-color: #cfcfcf;
+        }
+        .table th, table td{
+        font-family: monospace;
+        font-size: 16px;
+        padding:8px;
+        text-align: center;
+        }
+        .table thead th{
+            
+            background-color: #033c68;
+        }
+        .table tbody tr:hover{
+            background-color: #489dc7;
+        }
+        @media screen and (max-width: 600px ) {
+            .table{
+                border:0px;
+            }
+            .table tr{
+                margin-bottom: 8px;
+                border-bottom: 2px #489dc7;
+                
+        
+        }
+        .table th{
+            margin-bottom: 8px;
+            border-bottom: 2px #489dc7;
+            
+        
+        }
+        }
+        
+        
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        
+        
+        /* boton de la pagina principal */
+        
+        .BotonInicio {
+            width: auto;
+            height: 50px;
+        }
+        
+        
+        /* Boton de agregar pcs en la tabla de pcs */
+        .derecha {
+            text-align: right;
+        }
+        .botonAnexar {
+            border-radius: 10px;
+            position: relative;
+            top:260px;
+            display: inline-block;
+            padding: 7px 11px;
+            color: rgb(0, 0, 0);
+            background-color: #033c68;
+            letter-spacing: 1px;
+            font-size: 14px;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 0 0 10px;
+            cursor: pointer;
+         }
+         select{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: 0 0 10px;
+            border: 0!important;
+            background: #033c68;
+            background-image: none;
+         }
+        select::-ms-expand{
+            display: none;
+        }
+        .select {
+            display: flex;
+            width: 20em;
+            height: 3em;
+            line-height: 3;
+            background: #0979b0;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+        select{
+            flex: 1;
+            padding: 5px 1.5em;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            font-size: 1em;
+            font-family: monospace;
+        }
+        .select::after{
+        content: '/25B';
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 1 1em;
+        background: rgb(209, 231, 13);
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
+        }
+        .select:hover::after{
+            color:#033c68;
+        }
+        
+        .input{
+            background: #cfcfcf;
+            border: #033c68;
+            padding: 5px;
+            border-radius: 4px;
+            margin-bottom: 1px;
+            font-family: monospace;
+            font-size: 1em;
+        }
+        
+        .txt{
+            margin: 5px;
+            font-family: monospace;
+            font-size: 1.2em;
+        }
+        .botonbuscar{
+            border-radius: 10px;
+            position: relative;
+            top: -10px;
+            display: inline-block;
+            padding: 7px 11px;
+            color: rgb(0, 0, 0);
+            background-color: #033c68;
+            letter-spacing: 1px;
+            font-size: 14px;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 0 0 10px;
+            cursor: pointer;
+        }
+        
+        .boton{
+        margin: 10px;
+        }
+        .lbl-switch{
+            width: 55px;
+            height: 30px;
+            display: inline-block;
+            background: #cfcfcf;
+            border-radius: 100px;
+            position: relative;
+            cursor: pointer;
+        }
+        #btn-switch:checked~ .lbl-switch{
+            background: #033c68;
+        }
+        .lbl-switch::after{
+            position: absolute;
+            content: '';
+            width: 22px;
+            height: 22px;
+            background: #4181e2;
+            border-radius: 100px;
+            top: 4px;
+            left: 5px;
+            transition:0.3s;
+        }
+        #btn-switch:checked~ .lbl-switch::after{
+            background: #cfcfcf;
+            left: 28px;
+        }
+        #btn-switch{
+            display: none;
+        }
+        
+        
+        
+        /* Pertenece a la pagina principal*/
+        
+        .ConteinerInicio {
+            text-align: center;
+        }
+        
+        .Filtros {
+            text-align: center;
+        }
+        
+        
+        /* Paginar */
+        .centrar {
+            text-align: center;
+        }
+        
+        ul.pagination {
+            display: inline-block;
+            position: absolute;
+            top:550px;
+            left: 550px;
+         
+        }
+        
+        ul.pagination li {
+            display: inline;
+        }
+        
+        ul.pagination li a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        
+        ul.pagination li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        ul.pagination li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        
+        /*       CONTENIDO DESPLEGABLE         */
+        
+        header {
+            font-family: Helvetica;
+            width: 480px;
+            position: absolute;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #menu li>a {
+            background-color: grey;
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            min-width: 100px;
+        }
+        
+        #menu li>a:hover {
+            color: #000;
+            background-color: #eaeaea;
+        }
+        
+        #menu>li {
+            float: left;
+            text-align: center
+        }
+        
+        #menu>li>ul {
+            display: none;
+        }
+        
+        #menu>li:hover>ul {
+            display: block;
+        }
